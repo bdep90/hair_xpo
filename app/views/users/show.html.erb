@@ -1,0 +1,14 @@
+<!-- h2: displays user name, user avatar -->
+<img src="<%= @user.avatar %>" /><h4> <%= @user.user_name %> </h4>
+
+<!-- link to create article -->
+<%= link_to "CREATE TIDBIT", new_user_article_path(@user) %><br>
+
+<!-- h4: list of user's articles -->
+
+
+<!-- link to all expo tidbits -->
+<%= link_to "TIDBITS GALLERY", "/users" %><br>
+
+<!-- links to update account log out -->
+<%= link_to "UPDATE ACCOUNT", edit_user_path(@user) %> | <%= link_to "LOG OUT", "/" %>
