@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  include ArticlesHelper
 
   # lists all tidbits
   def index
@@ -6,7 +7,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find_by(params[:article_id])
+    @article = Article.find(params[:id])
     # @comment = Comment.new
     # @comment.article_id = @article.id
   end
@@ -19,6 +20,7 @@ class ArticlesController < ApplicationController
   # posts tidbit
   def create
     @article = Article.new(article_params)
+    @article.user_id = current_user.id
 
     if @article.save
       redirect_to user_path(current_user)
@@ -34,8 +36,8 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    if @article.update(article_params)
-      redirect_to @user
+    if @article.update_attributes(article_params)
+      redirect_to user_path(current_user)
     else
       render 'edit'
     end
@@ -48,19 +50,6 @@ class ArticlesController < ApplicationController
     redirect_to user_path(current_user)
   end
 
-  private
 
-  def article_params
-    params.require(:article).permit(
-    :name,
-    :image1,
-    :image2,
-    :image3,
-    :caption1,
-    :caption2,
-    :caption3,
-    :video
-    )
-  end
 
 end

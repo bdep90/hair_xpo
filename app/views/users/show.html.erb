@@ -2,28 +2,18 @@
 <img src="<%= @user.avatar %>"></img>
 <h4> <%= @user.user_name %> </h4>
 
-
-
-
 <!-- link to create article -->
-<%= link_to "CREATE TIDBIT", new_user_article_path(@user) %><br>
-
+<%= link_to "CREATE TIDBIT", new_user_article_path(current_user) %><br>
 
 <!-- p: list of user articles -->
-
+<h4 id="user-tidbits">Your Tidbits</h4>
 <% @user_articles.each do |article| %>
-<p id="user-articles">
-  <a href="/users/:user_id/articles/:id"><%= article.name %></a>
-</p><br>
+<div id="user-articles">
+  <%= link_to "#{article.name}", "/users/#{current_user.id}/articles/#{article.id}" %>
+</div><br>
 <% end %>
 
-
-<!-- link to all expo tidbits -->
-<%= link_to "TIDBITS GALLERY", "/users/:user_id/articles" %><br>
-
-
-
-
-<!-- links to update account log out -->
+<!-- links to all expo tidbits, update account, log out -->
+<%= link_to "TIDBITS GALLERY", "/users/#{current_user.id}/articles" %> |
 <%= link_to "UPDATE ACCOUNT", edit_user_path(@user) %> |
-<%= link_to "LOG OUT", "/" %>
+<%= link_to "SIGN OUT", "/" %>

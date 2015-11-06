@@ -3,8 +3,10 @@
 <!-- show all user articles -->
 <% @articles.each do |article| %>
 <p id="all-articles">
-  <a href="/users/:user_id/articles/:id"><%= article.name %></a>
-</p><br>
+  <!-- user article path changes depending on user -->
+  <%= link_to "#{article.name}", "/users/#{current_user.id}/articles/#{article.id}" %><br>
+  <%= article.user_id %> | <%= article.created_at %>
+</p>
 <% end %>
-
+<br>
 <%= link_to "BACK", user_path(current_user) %>
