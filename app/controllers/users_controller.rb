@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
 
-  # displays all articles
+  # displays all user articles
   def index
-    @article = Article.all
+    @user = current_user
+    @user_articles = @user.articles
   end
 
   def new

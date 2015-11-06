@@ -1,9 +1,8 @@
 class ArticlesController < ApplicationController
 
-  # lists user tidbits
+  # lists all tidbits
   def index
-    @user = current_user
-    @user_articles = @user.articles
+    @articles = Article.all
   end
 
   def show
