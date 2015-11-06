@@ -1,1 +1,5 @@
 <h2>Tidbits Gallery</h2>
+
+<% @articles.each do |article| %>
+<a href="<%= article.name %>"><%= article.name %></a>
+<% end %>

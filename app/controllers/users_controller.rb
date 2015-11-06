@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 
+  # displays all articles
   def index
+    @article = Article.all
   end
 
   def new
@@ -17,7 +19,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
+    @user_articles = @user.articles
   end
 
   def edit
@@ -43,8 +46,6 @@ class UsersController < ApplicationController
       :avatar
     )
   end
-
-
 
 
 end

@@ -1,5 +1,9 @@
 <h1>All Hair Expo Tidbits</h1>
 
-<% @articles.each do |article| %>
-<a href="<%= article.name %>"></a> 
-<% end %>
+<!-- show all user articles -->
+<p>
+  <% @user_articles.each do |article| %>
+    <%= article.name %>
+  <% end %>
+  </a>
+</p>

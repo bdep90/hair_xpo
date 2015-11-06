@@ -1,12 +1,13 @@
 class ArticlesController < ApplicationController
 
-  # lists all tidbits
+  # lists user tidbits
   def index
-    @articles = Article.all
+    @user = current_user
+    @user_articles = @user.articles
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = Article.find_by(params[:article_id])
     # @comment = Comment.new
     # @comment.article_id = @article.id
   end
@@ -21,7 +22,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
-      redirect_to @user
+      redirect_to user_path(current_user)
     else
       render :new
     end
@@ -35,7 +36,7 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
     if @article.update(article_params)
-      redirect_to user_path(@user)
+      redirect_to @user
     else
       render 'edit'
     end
@@ -45,8 +46,10 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @article.destroy
 
-    redirect_to user_path(@user)
+    redirect_to user_path(current_user)
   end
+
+  private
 
   def article_params
     params.require(:article).permit(
