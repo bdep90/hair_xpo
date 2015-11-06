@@ -5,7 +5,7 @@
 <p id="all-articles">
   <!-- user article path changes depending on user -->
   <%= link_to "#{article.name}", "/users/#{current_user.id}/articles/#{article.id}" %><br>
-  <%= article.user_id %> | <%= article.created_at %>
+  <%= article.user_id %> | Created: <%= article.created_at.strftime("%b %d %Y") %>
 </p>
 <% end %>
 <br>

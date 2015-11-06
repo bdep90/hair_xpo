@@ -31,12 +31,13 @@ class ArticlesController < ApplicationController
 
   # prefilled tidbit
   def edit
+    @user = User.find(params[:user_id])
     @article = Article.find(params[:id])
   end
 
   def update
     @article = Article.find(params[:id])
-    if @article.update_attributes(article_params)
+    if @article.update(article_params)
       redirect_to user_path(current_user)
     else
       render 'edit'

@@ -1,5 +1,5 @@
 <h1>Edit Your Tidbit</h1>
-<%= form_for :article, url: "/users/#{current_user.id}/articles/#{article.id}" do |f| %>
+<%= form_for [@user, @article] do |f| %>
   <p>
     Style Name: <%= f.text_field :name %><br>
   </p>
