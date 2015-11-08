@@ -1,5 +1,6 @@
 <h2><%= @article.name %> Tidbit<br></h2>
 
+<!-- tidbit content -->
 <div class="captions">
   <img src="<%= @article.img1 %>" id="img1" height="250" width="300"></img>
   <p id="cap1"><%= @article.cap3 %></p>
@@ -15,6 +16,19 @@
   <p id="cap3"><%= @article.cap3 %></p>
 </div><br>
 
-<p id="vid">Vidbit</p>
+<p id="vid">Vidbit</p><br>
 
-<%= link_to "BACK", user_path(current_user) %>
+
+<!-- tidbit comments -->
+<h4>Comments</h4>
+<%= render partial: 'articles/comment', collection: @article_comments %>
+
+
+
+<!-- post comment -->
+<%= render partial: 'comments/form' %>
+
+
+<!-- links to back, sign out -->
+<%= link_to "BACK", user_path(current_user) %> |
+<%= link_to "SIGN OUT", "/" %>

@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   post '/users/:user_id/articles/new' => 'articles#create'
 
   resources :users do
-    resources :articles
+    resources :articles do
+      resources :comments, only: [:index, :new, :create]
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -3,12 +3,12 @@
 <h4> <%= @user.user_name %> </h4>
 
 <!-- link to create article -->
-<%= link_to "CREATE TIDBIT", new_user_article_path(current_user) %><br>
+<button id="new-bit">
+  <%= link_to "CREATE TIDBIT", new_user_article_path(current_user) %>
+</button>
 
 <!-- p: list of user articles -->
-
 <div id="user-bits">Your Tidbits</div>
-
 <table><br>
   <% @user_articles.each do |article| %>
   <tr>
@@ -25,12 +25,12 @@
     </td>
     <td>
       <div id="edit-link">
-        <%= link_to "Edit", "/users/#{current_user.id}/articles/#{article.id}/edit" %>
+        <%= link_to "EDIT", "/users/#{current_user.id}/articles/#{article.id}/edit" %>
       </div>
     </td>
     <td>
       <div id="delete-link">
-        <%= link_to "Delete", "/users/#{current_user.id}/articles/#{article.id}",
+        <%= link_to "DELETE", "/users/#{current_user.id}/articles/#{article.id}",
               method: :delete,
               data: { confirm: "Delete Bit?" } %>
       </div>
@@ -41,6 +41,6 @@
 
 
 <!-- links to all expo tidbits, update account, log out -->
-<%= link_to "TIDBITS GALLERY", "/users/#{current_user.id}/articles" %> |
+<%= link_to "TIDBIT GALLERY", "/users/#{current_user.id}/articles" %> |
 <%= link_to "UPDATE ACCOUNT", edit_user_path(@user) %> |
 <%= link_to "SIGN OUT", "/" %>

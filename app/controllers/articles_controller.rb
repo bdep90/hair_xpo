@@ -6,10 +6,14 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
+  # find specific tidbit
   def show
+    @user = current_user
+    @user_articles = @user.articles
     @article = Article.find(params[:id])
-    # @comment = Comment.new
-    # @comment.article_id = @article.id
+    @comment = Comment.new
+    @comment.article_id = @article.id
+    @article_comments = @article.comments
   end
 
   # new tidbit form

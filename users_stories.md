@@ -17,8 +17,8 @@ BONUS
 - Embed instructional videos (`vidbit`) into tidbits.
 - Add number of tidbits to user profile.
 - Create sidebar with all relevant links.
-- Allow users to change `avatar` once logged in.
-- List of user comments on `tidbits` and links to their `tidbits`. 
+- ~~Allow users to change `avatar` once logged in.~~
+- List of user comments on `tidbits` and links to their `tidbits`.
 
 
 
