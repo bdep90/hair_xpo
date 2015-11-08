@@ -2,6 +2,8 @@ READ ME
 # Hair Expo
 ### A Community of Hair Styling Enthusiasts
 
+#### [User Stories](/Users/BDep/WDI/hair_xpo/users_stories.md)
+
 ###### Technologies Used:
 - Ruby on Rails
 - Heroku
