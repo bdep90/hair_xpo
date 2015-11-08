@@ -14,7 +14,7 @@ Users can...
 BONUS
 - Create `likes`.
 - Allow users to download articles.
-- Embed instructional videos (`vidbit`) into tidbits.
+- ~~Embed instructional videos (`vidbit`) into tidbits.~~
 - Add number of tidbits to user profile.
 - Create sidebar with all relevant links.
 - ~~Allow users to change `avatar` once logged in.~~

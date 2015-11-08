@@ -26,11 +26,10 @@
   </p>
   <p>
     Vidbit:<br>
-    <%= f.url_field :vid %><br>
+    <%= f.text_field :vid %><br>
   </p>
-  <%= f.submit "Submit" %>
+  <%= f.submit "Submit" %><br>
 <% end %>
 
-<footer>
-  <%= link_to "BACK", user_path(current_user) %>
-</footer>
+<%= link_to "BACK TO PROFILE", user_path(current_user) %> |
+<%= link_to "SIGN OUT", "/" %>

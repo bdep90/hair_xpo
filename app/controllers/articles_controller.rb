@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
-  # posts tidbit
+  # posts tidbit to profile
   def create
     @article = Article.new(article_params)
     @article.user_id = current_user.id
@@ -42,7 +42,7 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
     if @article.update(article_params)
-      redirect_to user_path(current_user)
+      redirect_to "/users/#{current_user.id}/articles/#{@article.id}"
     else
       render 'edit'
     end

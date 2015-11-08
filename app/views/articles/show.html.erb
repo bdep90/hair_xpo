@@ -1,4 +1,6 @@
+<!-- article name, author, published date-->
 <h2><%= @article.name %> Tidbit<br></h2>
+
 
 <!-- tidbit content -->
 <div class="captions">
@@ -16,13 +18,15 @@
   <p id="cap3"><%= @article.cap3 %></p>
 </div><br>
 
-<p id="vid">Vidbit</p><br>
+<p id="vid">
+  Vidbit
+  <%= raw( @article.vid )%> 
+</p><br>
 
 
 <!-- tidbit comments -->
 <h4>Comments</h4>
 <%= render partial: 'articles/comment', collection: @article_comments %>
-
 
 
 <!-- post comment -->
