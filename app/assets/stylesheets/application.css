@@ -1,5 +1,55 @@
+body {
+  background-color: rgb(40, 45, 55);
+  font-family: sans-serif;
+  color: antiquewhite;
+  text-align: center;
+  padding: 20px;
+}
+
+a {
+  font-size: 25px;
+  color: rgb(70, 140, 210);
+}
+
 img {
   border-radius: 50%;
+  border-style: groove;
+  border-color: rgb(180, 39, 185);
+  border-width: thick;
+  background-color: white;
+  opacity: 0.75;
+}
+
+#demo {
+  border-style: groove;
+  border-color: blue;
+  border-width: thick;
+  opacity: 1;
+}
+
+h1 {
+  color: rgb(90, 180, 190);
+  font-size: 60px;
+}
+
+#description {
+  text-align: justify;
+  padding: 10px 50px 10px 50px;
+  font-size: 25px;
+}
+
+#circles {
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  text-align: center;
+
+}
+
+li {
+  list-style-type: none;
+  padding: 5px;
+  display: inline;
 }
 
 
