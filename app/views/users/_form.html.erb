@@ -1,3 +1,11 @@
+<!-- errors -->
+<div id="user-errors">
+  <% @user.errors.full_messages.each do |msg| %>
+    <%= msg %><br>
+  <% end %>
+</div>
+
+<!-- form -->
 <%= form_for @user do |f| %>
   <p>
     Username:<br>
@@ -17,3 +25,5 @@
   </p>
   <%= f.submit "Submit" %>
 <% end %>
+
+<%= link_to "BACK", "/" %>

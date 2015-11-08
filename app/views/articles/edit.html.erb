@@ -1,4 +1,12 @@
 <h1>Edit Your Tidbit</h1>
+<!-- errors -->
+<div id="article-errors">
+  <% @article.errors.full_messages.each do |msg| %>
+    <%= msg %><br>
+  <% end %>
+</div>
+
+<!-- form -->
 <%= form_for [@user, @article] do |f| %>
   <p>
     Style Name: <%= f.text_field :name %><br>

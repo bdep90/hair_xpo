@@ -15,10 +15,10 @@ BONUS
 - Create `likes`.
 - Allow users to download articles.
 - ~~Embed instructional videos (`vidbit`) into tidbits.~~
-- Add number of tidbits to user profile.
+- ~~Add number of tidbits to user profile.~~
 - Create sidebar with all relevant links.
 - ~~Allow users to change `avatar` once logged in.~~
-- List of user comments on `tidbits` and links to their `tidbits`.
+- List of global user comments on `tidbits` and links to their `tidbits`.
 
 
 

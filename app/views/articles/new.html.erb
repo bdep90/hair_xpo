@@ -1,4 +1,12 @@
 <h1>New Tidbit</h1>
+<!-- errors -->
+<div id="article-errors">
+  <% @article.errors.full_messages.each do |msg| %>
+    <%= msg %><br>
+  <% end %>
+</div>
+
+<!-- form -->
 <%= form_for :article, url: "/users/#{current_user.id}/articles" do |f| %>
   <p>
     Style Name: <%= f.text_field :name %><br></p>
