@@ -1,4 +1,4 @@
-<h1>New Tidbit</h1>
+<h2>New Tidbit</h2>
 <!-- errors -->
 <div id="article-errors">
   <% @article.errors.full_messages.each do |msg| %>
@@ -7,36 +7,38 @@
 </div>
 
 <!-- form -->
-<%= form_for :article, url: "/users/#{current_user.id}/articles" do |f| %>
-  <p>
-    Style Name: <%= f.text_field :name %><br></p>
-  <p>
-    Image 1: <%= f.text_field :img1 %><br>
-  </p>
-  <p>
-    Caption 1:<br>
-    <%= f.text_area :cap1 %><br>
-  </p>
-  <p>
-    Image 2: <%= f.text_field :img2 %><br>
-  </p>
-  <p>
-    Caption 2:<br>
-    <%= f.text_area :cap2 %><br>
-  </p>
-  <p>
-    Image 3: <%= f.text_field :img3 %><br>
-  </p>
-  <p>
-    Caption 3:<br>
-    <%= f.text_area :cap3 %><br>
-  </p>
-  <p>
-    Vidbit:<br>
-    <%= f.text_field :vid %><br>
-  </p>
-  <%= f.submit "Submit" %>
-<% end %>
+<div id="new-bit-form">
+  <%= form_for :article, url: "/users/#{current_user.id}/articles" do |f| %>
+    <p>
+      Style Name <%= f.text_field :name %><br>
+    </p>
+    <p>
+      Image1 URL <%= f.url_field :img1 %><br>
+    </p>
+    <p>
+      Caption1 <%= f.text_area :cap1, :rows => "5" %><br>
+    </p>
+    <p>
+      Image2 URL <%= f.url_field :img2 %><br>
+    </p>
+    <p>
+      Caption2 <%= f.text_area :cap2, :rows => "5" %><br>
+    </p>
+    <p>
+      Image3 URL <%= f.url_field :img3 %><br>
+    </p>
+    <p>
+      Caption3 <%= f.text_area :cap3, :rows => "5" %><br>
+    </p>
+    <p>
+      Vidbit (Optional) <%= f.text_field :vid %><br>
+    </p>
+    <%= f.submit "SUBMIT" %>
+  <% end %>
+</div>
 
-<%= link_to "BACK TO PROFILE", user_path(current_user) %> |
+
+<div class="links">
+<%= link_to "BACK", user_path(current_user) %> |
 <%= link_to "SIGN OUT", "/" %>
+</div>

@@ -1,14 +1,24 @@
 body {
-  background-color: rgb(40, 45, 55);
-  font-family: sans-serif;
-  color: antiquewhite;
+  width: 1000px;
+  margin: 0 auto;
+  position: inherit;
   text-align: center;
-  padding: 20px;
+  background-color: rgb(40, 45, 55);
+  font-family: 'Helvetica Neue';
+  color: antiquewhite;
+  padding: 40px;
 }
 
 a {
-  font-size: 25px;
   color: rgb(70, 140, 210);
+  text-decoration: none;
+  font-family: 'Garamond';
+  font-size: 26px;
+  padding: 5px;
+}
+
+.links {
+  padding-top: 40px;
 }
 
 img {
@@ -20,6 +30,34 @@ img {
   opacity: 0.75;
 }
 
+h1 {
+  color: rgb(90, 180, 190);
+  font-size: 60px;
+}
+
+h2 {
+  color: rgb(90, 180, 190);
+  font-size: 50px;
+}
+
+#user-errors {
+  font-size: 18px;
+  color: red;
+  padding-bottom: 30px;
+}
+
+#article-errors {
+  font-size: 18px;
+  color: red;
+}
+
+/*homepage*/
+#description {
+  text-align: justify;
+  padding: 10px 60px 10px 60px;
+  font-size: 22px;
+}
+
 #demo {
   border-style: groove;
   border-color: blue;
@@ -27,30 +65,177 @@ img {
   opacity: 1;
 }
 
-h1 {
-  color: rgb(90, 180, 190);
-  font-size: 60px;
-}
-
-#description {
-  text-align: justify;
-  padding: 10px 50px 10px 50px;
-  font-size: 25px;
-}
-
 #circles {
   margin: 0 auto;
   position: relative;
   display: block;
   text-align: center;
-
 }
 
 li {
   list-style-type: none;
   padding: 5px;
-  display: inline;
+  display: inline-block;
 }
+
+/*signin*/
+#signin {
+  display: inline-block;
+  width: 500px;
+  padding: 100px;
+  background-color: purple;
+  opacity: .8;
+  border-style: groove;
+  border-radius: 50%;
+  border-width: thick;
+  border-color: aliceblue;
+  font-size: 32px;
+}
+
+/*forms for user account*/
+#user-account-forms {
+  display: inline-block;
+  width: 500px;
+  padding: 50px;
+  background-color: purple;
+  opacity: .8;
+  border-style: groove;
+  border-radius: 50%;
+  border-width: thick;
+  border-color: aliceblue;
+}
+
+/*submit*/
+input[type=submit] {
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: rgb(90, 180, 190);
+}
+
+/*gallery*/
+#bit-link {
+  color: antiquewhite;
+  font-size: 32px;
+  padding:0px 16px 0px 16px;
+}
+
+#bit-info {
+  color: rgb(210, 159, 90);
+  font-size: 18px;
+}
+
+/*user profile styling*/
+/*user tag box*/
+#user-tag-box {
+  display: inline-block;
+  width: 800px;
+  padding: 10px 30px 20px 30px;
+}
+
+/*user info*/
+#user-tag {
+  display: inline-flex;
+}
+
+#user-name {
+  padding: 10px;
+}
+
+/*create bit link*/
+#new-bit-box {
+  text-align: right;
+  font-weight: bolder;
+}
+
+#new-bit {
+  font-size: 16px;
+  background-color: aliceblue;
+  padding: 5px;
+  color: black;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: 'Helvetica Neue';
+}
+
+/*table*/
+#user-bits {
+  color: rgb(90, 180, 190);
+  font-size: 30px;
+}
+
+#user-bits-table {
+  display: inline-block;
+  text-align: center;
+  color: rgb(90, 180, 190);
+  font-size: 30px;
+}
+
+#bitinfo.dates {
+  font-size: 14px;
+  text-align: left;
+  width: 400px;
+  padding-left: 120px;
+}
+
+td {
+  color: antiquewhite;
+  padding: 10px;
+}
+
+/*tidbit show styling*/
+/*bit container*/
+#bit-box {
+  display: inline;
+  text-align: center;
+  overflow: hidden;
+}
+
+/*bit images*/
+.bit-imgs {
+  border-radius: 0px;
+  border-color: blue;
+  padding: 10px;
+}
+
+/*video*/
+#vid-bit {
+  text-align: center;
+}
+
+/*bit comments styling*/
+/*header*/
+#comments-header {
+  color: rgb(90, 180, 190);
+  font-size: 24px;
+}
+
+/*list*/
+#article-comments {
+  margin: 0 auto;
+  width: 400px;
+  text-align: left;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  background-color: rgb(115, 100, 125);
+}
+
+/*post new comment*/
+#comments {
+  font-size: 16px;
+  background-color: aliceblue;
+  color: black;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: 'Helvetica Neue';
+}
+
+
+
+
+
+
+
 
 
 /*

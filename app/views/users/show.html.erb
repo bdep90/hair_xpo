@@ -1,39 +1,33 @@
-<!-- h2: displays user name, user avatar -->
-<img src="<%= @user.avatar %>"></img>
-<h4> <%= @user.user_name %> </h4>
+<!-- div: displays user name, user avatar -->
+<div id="user-tag-box">
+  <div id="user-tag">
+    <img src="<%= @user.avatar %>", height="80px", width="80px">
+    </img>
+    <h4 id="user-name"> <%= @user.user_name %> </h4>
+  </div><br>
+  <!-- link to create article -->
+  <div id="new-bit-box">
+    <%= link_to "NEW TIDBIT", new_user_article_path(current_user), id: 'new-bit' %>
+  </div>
+</div>
 
-<!-- link to create article -->
-<button id="new-bit">
-  <%= link_to "CREATE TIDBIT", new_user_article_path(current_user) %>
-</button>
 
 <!-- p: list of user articles -->
-<div id="user-bits">Your Tidbits</div>
-<table><br>
+<div id="user-bits">YOUR TIDBITS</div>
+<table id="user-bits-table"><br>
   <% @user_articles.each do |article| %>
   <tr>
     <td>
-      <div id="user-articles">
-        <%= link_to "#{article.name}", "/users/#{current_user.id}/articles/#{article.id}" %>
-        <%=pluralize(article.comments.count(:all), 'COMMENT').upcase %>
-      </div>
-      <div class="dates" id="create-date">
-        Created: <%= article.created_at.strftime("%b %d %Y, %H:%M") %>
-      </div>
-      <div class="dates" id="update-date">
-        Last Updated: <%= article.updated_at.strftime("%b %d %Y, %H:%M") %>
-      </div>
-    </td>
-    <td>
-      <div id="edit-link">
-        <%= link_to "EDIT", "/users/#{current_user.id}/articles/#{article.id}/edit" %>
-      </div>
-    </td>
-    <td>
-      <div id="delete-link">
+      <%= link_to "#{article.name}", "/users/#{current_user.id}/articles/#{article.id}", id: "bit-link" %>
+      <%= pluralize(article.comments.count(:all), 'QUIP').upcase %>
+        <%= link_to "EDIT", "/users/#{current_user.id}/articles/#{article.id}/edit" %> |
         <%= link_to "DELETE", "/users/#{current_user.id}/articles/#{article.id}",
-              method: :delete,
-              data: { confirm: "Delete Bit?" } %>
+                method: :delete,
+                data: { confirm: "Delete Bit?" } %>
+
+      <div class="dates" id="bit-info">
+        POSTED: <%= article.created_at.strftime("%b %d %Y")%> |
+        LAST UPDATED: <%= article.updated_at.strftime("%b %d %Y, %H:%M") %>
       </div>
     </td>
   </tr>
@@ -42,6 +36,8 @@
 
 
 <!-- links to all expo tidbits, update account, log out -->
-<%= link_to "TIDBIT GALLERY", "/users/#{current_user.id}/articles" %> |
-<%= link_to "UPDATE ACCOUNT", edit_user_path(@user) %> |
-<%= link_to "SIGN OUT", "/" %>
+<div class="links">
+  <%= link_to "TIDBIT GALLERY", "/users/#{current_user.id}/articles" %> |
+  <%= link_to "EDIT PROFILE", edit_user_path(@user) %> |
+  <%= link_to "SIGN OUT", "/" %>
+</div>

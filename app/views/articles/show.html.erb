@@ -1,37 +1,45 @@
 <!-- tidbit name, author, published date-->
 <h2><%= @article.name %> Tidbit<br></h2>
+<h5>Published: <%= @article.created_at.strftime("%b %d %Y") %><br></h5>
+
 
 
 <!-- tidbit content -->
-<div class="captions">
-  <img src="<%= @article.img1 %>" id="img1" height="250" width="300"></img>
-  <p id="cap1"><%= @article.cap3 %></p>
+<div id="bit-box">
+  <ul id="all-content">
+    <li>
+      <img src="<%= @article.img1 %>" class="bit-imgs" id="img1" height="200" width="250">
+      </img>
+      <p class="captions"><%= @article.cap3 %></p>
+    </li>
+    <li>
+      <img src="<%= @article.img2 %>" class="bit-imgs" id="img2" height="200" width="250">
+      </img>
+      <p class="captions"><%= @article.cap2 %></p>
+    </li>
+    <li>
+      <img src="<%= @article.img3 %>" class="bit-imgs" id="img3" height="200" width="250">
+      </img><br>
+      <p class="captions"><%= @article.cap3 %></p>
+    </li>
+  </ul>
+  <p id="vidbit"><%= raw( @article.vid )%></p>
 </div><br>
-
-<div class="captions">
-  <img src="<%= @article.img2 %>" id="img2" height="250" width="300"></img>
-  <p id="cap2"><%= @article.cap2 %></p>
-</div><br>
-
-<div class="captions">
-  <img src="<%= @article.img3 %>" id="img3" height="250" width="300"></img>
-  <p id="cap3"><%= @article.cap3 %></p>
-</div><br>
-
-<p id="vid">
-  <%= raw( @article.vid )%>
-</p><br>
 
 
 <!-- tidbit comments -->
-<h4>Comments</h4>
-<%= render partial: 'articles/comment', collection: @article_comments %>
+<div id="comments-box">
+  <p id="comments-header">QUIPS</p>
+  <%= render partial: 'articles/comment', collection: @article_comments %>
+  <!-- post comment -->
+  <%= render partial: 'comments/form' %>
+</div>
 
 
-<!-- post comment -->
-<%= render partial: 'comments/form' %>
 
 
 <!-- links to back, sign out -->
-<%= link_to "BACK", user_path(current_user) %> |
-<%= link_to "SIGN OUT", "/" %>
+<div class="links">
+  <%= link_to "BACK", user_path(current_user) %> |
+  <%= link_to "SIGN OUT", "/" %>
+</div>

@@ -1,13 +1,13 @@
-<h1>All Hair Expo Tidbits</h1>
+<h1>Hair Expo Tidbits</h1>
 
 <!-- show all user articles -->
 <% @articles.each do |article| %>
-<p id="all-articles">
+<p id="bit-info">
   <!-- user article path changes depending on user -->
-  <%= link_to "#{article.name}", "/users/#{current_user.id}/articles/#{article.id}" %><br>
-  <%= article.user_id %> | Created: <%= article.created_at.strftime("%b %d %Y") %>
+  <%= link_to "#{article.name}", "/users/#{current_user.id}/articles/#{article.id}", id: "bit-link" %><br>
+  <%= article.user_id %> | POSTED: <%= article.created_at.strftime("%b %d %Y") %>
 </p>
 <% end %>
 <br>
-<%= link_to "BACK TO PROFILE", user_path(current_user) %> |
+<%= link_to "PROFILE", user_path(current_user) %> |
 <%= link_to "SIGN OUT", "/" %>

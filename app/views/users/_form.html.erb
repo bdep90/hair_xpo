@@ -6,24 +6,12 @@
 </div>
 
 <!-- form -->
-<%= form_for @user do |f| %>
-  <p>
-    Username:<br>
-    <%= f.text_field :user_name %><br>
-  </p>
-  <p>
-    Password:<br>
-    <%= f.password_field :password %><br>
-  </p>
-  <p>
-    Password Confirmation:<br>
-    <%= f.password_field :password_confirmation %><br>
-  </p>
-  <p>
-    Avatar URL:<br>
-    <%= f.text_field :avatar %><br>
-  </p>
-  <%= f.submit "Submit" %>
-<% end %>
-
-<%= link_to "BACK", "/" %>
+<div id="user-account-forms">
+  <%= form_for @user do |f| %>
+    <p> Username <%= f.text_field :user_name %><br></p>
+    <p> Password <%= f.password_field :password %><br></p>
+    <p> Password Confirmation <%= f.password_field :password_confirmation %><br></p>
+    <p> Avatar URL <%= f.text_field :avatar %><br></p>
+    <%= f.submit "SUBMIT" %>
+  <% end %>
+</div>
