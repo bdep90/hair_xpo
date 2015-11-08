@@ -12,7 +12,7 @@ Users can...
 - view and `comment on` individual community-wide `tidbits`.
 
 BONUS
-- Create `likes`.
+- Create `demo` page for potential users.
 - Allow users to download articles.
 - ~~Embed instructional videos (`vidbit`) into tidbits.~~
 - ~~Add number of tidbits to user profile.~~

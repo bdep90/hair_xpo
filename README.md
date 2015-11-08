@@ -18,8 +18,9 @@ READ ME
 
 ##### Unsolved Problems:
 - UTC time zone conversion
-- Validate video only if embedded
+- Validating video only if embedded
 - Rendering posted comments (POST method)
+- Linking `user_id` to `comment`
 
 <!-- == README
 
