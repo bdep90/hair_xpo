@@ -1,6 +1,6 @@
 <div id="comment-form">
   <%= form_for @comment, url: "/users/#{current_user.id}/articles/#{@article.id}/comments" do |f| %>
     <p id="comment-space"><%= f.text_area :content, :rows => "6" %></p>
-  <%= f.submit "POST NEW QUIP", id: 'comments' %>
+  <%= f.submit "POST NEW QUIP", id: "comments" %>
   <% end %>
 </div>

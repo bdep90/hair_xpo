@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
   def create
     @article = Article.find(params[:article_id])
     @comment = @article.comments.new(comment_params)
+    @comment.save
     
     redirect_to "/users/#{current_user.id}/articles/#{@article.id}"
   end
