@@ -16,12 +16,13 @@ READ ME
 - Day 5: Set up error messages / CSS styling / Seed db
 
 ###### Installation Instructions:
-- Heroku remote: `mysterious-reaches-8947`
+- Heroku app:
+https://mysterious-reaches-8947.herokuapp.com/
 
 ##### Unsolved Problems:
 - UTC time zone conversion
 - Validating video only if embedded
-- Rendering posted comments (POST method)
+- ~~Rendering posted comments (POST method)~~
 - Linking `user_id` to `comment`
 
 <!-- == README
